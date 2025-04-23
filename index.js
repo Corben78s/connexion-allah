@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function ConnexionAllah() {
+export default function Home() {
   const [date, setDate] = useState("");
   const [verse, setVerse] = useState(null);
   const [hadithMorning, setHadithMorning] = useState(null);
@@ -43,54 +43,54 @@ export default function ConnexionAllah() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white p-4 font-sans">
-      <h1 className="text-3xl font-bold mb-2">Connexion à Allah</h1>
-      <p className="text-sm text-gray-300 mb-4">{date}</p>
+    <div style={{ backgroundColor: '#0f172a', color: 'white', minHeight: '100vh', padding: '20px', fontFamily: 'sans-serif' }}>
+      <h1 style={{ fontSize: '2rem', fontWeight: 'bold' }}>Connexion à Allah</h1>
+      <p style={{ fontSize: '0.875rem', color: '#cbd5e1' }}>{date}</p>
 
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold">Verset du jour</h2>
+      <div style={{ marginTop: '20px' }}>
+        <h2 style={{ fontSize: '1.25rem', fontWeight: '600' }}>Verset du jour</h2>
         {verse && (
-          <div className="mt-2">
-            <p className="text-lg italic">Sourate {verse.sourate}, verset {verse.numero}</p>
-            <p className="mt-1">"{verse.texte}"</p>
-            <p className="text-gray-400 text-sm mt-1">{verse.explication}</p>
+          <div style={{ marginTop: '10px' }}>
+            <p style={{ fontStyle: 'italic' }}>Sourate {verse.sourate}, verset {verse.numero}</p>
+            <p>"{verse.texte}"</p>
+            <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{verse.explication}</p>
           </div>
         )}
       </div>
 
-      <div className="mb-6">
+      <div style={{ marginTop: '20px' }}>
         <details open>
-          <summary className="text-lg font-semibold">Matin</summary>
-          <div className="mt-2">
+          <summary style={{ fontSize: '1rem', fontWeight: '600' }}>Matin</summary>
+          <div style={{ marginTop: '10px' }}>
             <details open>
-              <summary className="text-md font-medium">Hadith</summary>
-              <p className="mt-1">{hadithMorning?.texte}</p>
-              <p className="text-gray-400 text-sm">Source : {hadithMorning?.source}</p>
-              <p className="text-gray-400 text-sm">{hadithMorning?.explication}</p>
+              <summary style={{ fontSize: '0.95rem', fontWeight: '500' }}>Hadith</summary>
+              <p>{hadithMorning?.texte}</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>Source : {hadithMorning?.source}</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{hadithMorning?.explication}</p>
             </details>
-            <details className="mt-2" open>
-              <summary className="text-md font-medium">Du‘a</summary>
-              <p className="mt-1">{duaMorning?.texte}</p>
-              <p className="text-gray-400 text-sm">{duaMorning?.explication}</p>
+            <details style={{ marginTop: '10px' }} open>
+              <summary style={{ fontSize: '0.95rem', fontWeight: '500' }}>Du‘a</summary>
+              <p>{duaMorning?.texte}</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{duaMorning?.explication}</p>
             </details>
           </div>
         </details>
       </div>
 
-      <div className="mb-6">
+      <div style={{ marginTop: '20px' }}>
         <details open>
-          <summary className="text-lg font-semibold">Soir</summary>
-          <div className="mt-2">
+          <summary style={{ fontSize: '1rem', fontWeight: '600' }}>Soir</summary>
+          <div style={{ marginTop: '10px' }}>
             <details open>
-              <summary className="text-md font-medium">Hadith</summary>
-              <p className="mt-1">{hadithEvening?.texte}</p>
-              <p className="text-gray-400 text-sm">Source : {hadithEvening?.source}</p>
-              <p className="text-gray-400 text-sm">{hadithEvening?.explication}</p>
+              <summary style={{ fontSize: '0.95rem', fontWeight: '500' }}>Hadith</summary>
+              <p>{hadithEvening?.texte}</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>Source : {hadithEvening?.source}</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{hadithEvening?.explication}</p>
             </details>
-            <details className="mt-2" open>
-              <summary className="text-md font-medium">Du‘a</summary>
-              <p className="mt-1">{duaEvening?.texte}</p>
-              <p className="text-gray-400 text-sm">{duaEvening?.explication}</p>
+            <details style={{ marginTop: '10px' }} open>
+              <summary style={{ fontSize: '0.95rem', fontWeight: '500' }}>Du‘a</summary>
+              <p>{duaEvening?.texte}</p>
+              <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{duaEvening?.explication}</p>
             </details>
           </div>
         </details>
